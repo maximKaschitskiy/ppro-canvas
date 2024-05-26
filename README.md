@@ -9,7 +9,7 @@ This project serves as a proof of concept demonstrating the collaborative potent
 -   Upon activating the extension, if a project has an active sequence, video files capturing the gameplay screen are automatically added to the timeline.
 -   The location for storing video chunks is the '/uploads' folder within the project directory.
 
-[Include a screenshot or video demonstration]
+https://github.com/maximKaschitskiy/ppro-canvas/assets/67905360/390384dc-2890-46c0-8ebf-5ff371ed2d34
 
 **How to Run:**
 
