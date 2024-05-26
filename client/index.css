@@ -1,0 +1,17 @@
+.body {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #232323;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.dosbox-container {
+    width: 640px;
+    height: 400px;
+}

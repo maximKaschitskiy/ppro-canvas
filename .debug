@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionList>
+    <Extension Id="dos-client">
+        <HostList>
+            <Host Name="PPRO" Port="3045"/>
+        </HostList>
+    </Extension>
+    <Extension Id="dos-server">
+        <HostList>
+            <Host Name="PPRO" Port="3055"/>
+        </HostList>
+    </Extension>
+</ExtensionList>

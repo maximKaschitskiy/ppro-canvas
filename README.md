@@ -41,4 +41,4 @@ The Node.js server receives these chunks, converts them to compatible formats us
 
 **Disclaimer and Copyright:**
 
-Adobe, Premiere, DOOM, and DOS are trademarks, and the rights of DosBox and js-dos-api belong to their respective owners.п
+Adobe, Premiere, DOOM, and DOS are trademarks, and the rights of DosBox and js-dos-api belong to their respective owners.
