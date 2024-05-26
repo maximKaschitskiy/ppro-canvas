@@ -16,7 +16,6 @@ https://github.com/maximKaschitskiy/ppro-canvas/assets/67905360/390384dc-2890-46
 
 -   Windows operating system (macOS is not supported)
 -   Adobe Premiere Pro installed
--   FFmpeg binary release downloaded from [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html) and placed inside the `ffmpeg` folder
 
 ## Setup and Installation
 
