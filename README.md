@@ -1,44 +1,46 @@
 
-**Short Description:**
+## Description
 
-This project serves as a proof of concept demonstrating the collaborative potential between Adobe Premiere Pro and JavaScript Canvas API for capturing and managing media. Primarily for Windows usage, this endeavor showcases how Premiere Pro can seamlessly integrate with custom JavaScript functionalities for media manipulation within its interface.
-
-**Functionality:**
-
--   Users can immerse themselves in the classic game DOOM directly within the Adobe Premiere Pro interface.
--   Upon activating the extension, if a project has an active sequence, video files capturing the gameplay screen are automatically added to the timeline.
--   The location for storing video chunks is the '/uploads' folder within the project directory.
+This project is a proof of concept that demonstrates how Adobe Premiere Pro can work in conjunction with the JavaScript Canvas API to capture and handle media. It showcases the integration of a DOSBox emulator within the Premiere Pro interface, allowing users to play the classic game DOOM and automatically import recorded gameplay footage into the active project timeline.
 
 https://github.com/maximKaschitskiy/ppro-canvas/assets/67905360/390384dc-2890-46c0-8ebf-5ff371ed2d34
 
-**How to Run:**
+## Key Features
 
-1.  Ensure Adobe Premiere Pro is installed on your system.
-2.  Clone the repository to your local machine.
-3.  Download the ffmpeg binary release from [ffmpeg.org](https://ffmpeg.org/download.html) and place it inside the 'ffmpeg' folder of the repository.
-4.  Locate the Adobe extensions folder typically found at:    
-    `C:\Program Files (x86)\Common Files\Adobe\CEP\extensions` 
-    and add the repository folder to it.
-5.  Confirm that port '3059' is enabled using the 'netstat -ano' command in either Command Prompt or PowerShell.
-6.  Launch Premiere Pro and navigate to the 'Extensions' section under the 'Window' tab. If 'DOS' appears, click on it to run the extension.
+1.  **DOSBox Emulator Integration**: The application embeds the DOSBox emulator within the Premiere Pro interface, enabling users to run and play DOOM directly within the application.
+2.  **Gameplay Recording**: Users can record their DOOM gameplay sessions using the MediaRecorder API, which captures the canvas element displaying the DOSBox emulator.
+3.  **Automatic Video Import**: If an active sequence is present in the Premiere Pro project, the recorded gameplay video chunks are automatically imported and added to the timeline.
+4.  **Video Storage**: The recorded video chunks are stored in the `/uploads` folder located within the project directory.
 
-**How It Works:**
+## Prerequisites
 
-Adobe Premiere Pro utilizes the Chrome Embedded Framework (CEF) to execute two primary operations:
+-   Windows operating system (macOS is not supported)
+-   Adobe Premiere Pro installed
+-   FFmpeg binary release downloaded from [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html) and placed inside the `ffmpeg` folder
 
--   Rendering the HTML page (CEP panel).
--   Running a Node.js script to access file data.
+## Setup and Installation
 
-On the HTML side, the code orchestrates DosBox's core within a JavaScript library and initiates the download and execution of the DOOM executable. Once the game is running, it employs the MediaRecorder API to capture the canvas element's content and sends the video data chunks to the Node.js server via HTTP fetch.
+1.  Clone the repository to your local machine.
+2.  Download the FFmpeg binary release from [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html) and place it inside the `ffmpeg` folder.
+3.  Locate the Adobe Extensions folder, typically located at `C:\Program Files (x86)\Common Files\Adobe\CEP\extensions`, and add the cloned repository to this folder.
+4.  Ensure that the application is using port `3059`, which should be available. You can check for available ports using the `netstat -ano` command in the command prompt or PowerShell.
+5.  Launch Adobe Premiere Pro, and in the "Window" tab, find the "Extensions" section. If the "DOS" entry is present, run it.
 
-The Node.js server receives these chunks, converts them to compatible formats using FFMPEG, and subsequently invokes ExtendScript functions to import each chunk into the Premiere Pro bin and insert them onto the timeline.
+## How It Works
 
-**Technologies Used:**
+Adobe Premiere Pro utilizes the Chromium Embedded Framework (CEF) to perform two main operations:
 
--   HTML, JavaScript, CSS, js-dos-api, CSInterface
--   Node.js, Express.js, fluent-ffmpeg, multer, shortid
--   ExtendScript
+1.  **Render HTML Page (CEP Panel)**: The HTML page is rendered within the CEP panel, which includes the code to run the DOSBox core using the `js-dos-api` library and a script to download and run the DOOM distribution.
+2.  **Run Node.js Script for File Data Access**: After the game is launched, the MediaRecorder API is used to capture the canvas element displaying the DOSBox emulator. The recorded video data chunks are sent to the Node.js server via HTTP fetch requests.
 
-**Disclaimer and Copyright:**
+The Node.js server receives the video data chunks and converts them to a compatible format using FFmpeg. Subsequently, the server calls ExtendScript functions to import each video chunk into the Premiere Pro bin and insert it onto the active timeline.
 
-Adobe, Premiere, DOOM, and DOS are trademarks, and the rights of DosBox and js-dos-api belong to their respective owners.
+## Technologies Used
+
+-   **Front-end**: HTML, JavaScript, CSS, `js-dos-api`, `CSInterface`
+-   **Back-end**: Node.js, Express.js, `fluent-ffmpeg`, `multer`, `shortid`
+-   **Adobe Integration**: ExtendScript
+
+## Disclaimer and Copyright
+
+Adobe, Premiere, DOOM, and DOS are trademarks owned by their respective companies. The rights to DOSBox and `js-dos-api` belong to their respective authors.
