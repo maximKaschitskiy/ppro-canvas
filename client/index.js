@@ -2,19 +2,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   let serverOn = false;
 
-  // const csInterface = new CSInterface();
+  const csInterface = new CSInterface();
 
-  // const evalAsync = (script) => {
-  //   return new Promise((resolve, reject) => {
-  //     csInterface.evalScript(script, (data) => resolve(data));
-  //   });
-  // };
+  const evalAsync = (script) => {
+    return new Promise((resolve, reject) => {
+      csInterface.evalScript(script, (data) => resolve(data));
+    });
+  };
 
-  // csInterface.addEventListener('serverRun', async () => {
-  //   serverOn = true;
-  // });
+  csInterface.addEventListener('serverRun', async () => {
+    serverOn = true;
+  });
 
-  // csInterface.requestOpenExtension("dos-server", "");
+  csInterface.requestOpenExtension("dos-server", "");
 
   const dosbox = new Dosbox({
     id: "dosbox",
