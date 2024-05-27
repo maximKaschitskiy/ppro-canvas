@@ -3,7 +3,7 @@
 
 This project is a proof of concept that demonstrates how Adobe Premiere Pro can work in conjunction with the JavaScript Canvas API to capture and handle media. It showcases the integration of a DOSBox emulator within the Premiere Pro interface, allowing users to play the classic game DOOM and automatically import recorded gameplay footage into the active project timeline.
 
-https://github.com/maximKaschitskiy/ppro-canvas/assets/67905360/390384dc-2890-46c0-8ebf-5ff371ed2d34
+https://github.com/maximKaschitskiy/ppro-canvas/assets/67905360/132afe59-f684-4669-adda-96d63b3242a7
 
 ## Key Features
 
